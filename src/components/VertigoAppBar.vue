@@ -1,11 +1,11 @@
 <!--  la barre de navigation en haut de l'application -->
 <template>
     <v-app-bar
-      color="primary"
-      density="compact"
+      color=#20285F
+      density="dense"
       >
       <!-- titre de l'application -->
-      <v-app-bar-title>Vertigo</v-app-bar-title>
+      <v-app-bar-title>VERTI'APP</v-app-bar-title>
       <!-- menu de droite -->
       <template v-slot:append>
       <v-btn id="menu-droite" icon="mdi-dots-vertical"></v-btn>
