@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <VertigoAppBar></VertigoAppBar>
     <v-main>
       <v-container class="fill-height" fluid>
         <v-responsive class="align-center text-center fill-height">
@@ -12,5 +11,5 @@
 </template>
 
 <script setup>
-  import VertigoAppBar from '@/components/VertigoAppBar.vue';
+
 </script>
