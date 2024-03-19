@@ -8,7 +8,7 @@
       <v-app-bar-title>VERTI'APP</v-app-bar-title>
       <!-- menu de droite -->
       <template v-slot:append>
-      <v-btn id="menu-droite" icon="mdi-dots-vertical"></v-btn>
+      <v-btn id="menu-droite" icon="../assets/Logo parametre"></v-btn>
         <!-- le menu s'affichera qd l'élément d'id 'menu-droite' ici 'v-btn' sera activé-->
         <v-menu activator="#menu-droite">  
             <v-list>

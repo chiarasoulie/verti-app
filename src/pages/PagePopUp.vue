@@ -23,7 +23,7 @@
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PagePopUp">
+            to="/PageLancement">
             Oui
       </v-btn>
 
