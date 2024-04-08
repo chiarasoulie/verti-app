@@ -4,65 +4,63 @@
       justify="center">
       <v-col>
         <VertigoAppBar></VertigoAppBar>
-      <h2 class="question">Y-a-t-il des vertiges maintenant ?</h2>
-      <p>{{ vertigesMaintenant }}</p>
+      <h2 class="question">Résultat de l'examen ORL : </h2>
+      <p>{{ ORL2 }}</p>
       <br>
       <br>
-      <v-btn-toggle v-model="vertigesMaintenant" color="deep-purple-accent-3">
-        <v-btn class="mr-4"
+      <br>
+      <br>
+        <v-btn class="bouton"
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PageHints">
-            Oui
+            to="/PageDiagnosticORL2"
+            style="text-transform: capitalize; letter-spacing: normal;">
+            Normal
       </v-btn>
       <v-btn class="bouton"
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PageNystagmusSpontane">
-            Non
+            to="/PageMeniereEnCrise"
+            style="text-transform: capitalize; letter-spacing: normal;">
+            Surdité, Acouphènes
       </v-btn>
-      </v-btn-toggle>
+      <v-btn class="bouton"
+            size="x-large"
+            rounded="xl"
+            variant="elevated"
+            to="/PageLabyrinthite"
+            style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
+            Otite, Otalgie, Otorrhée
+      </v-btn>
       </v-col>
     </v-row>
     <br>
     <br>
     <v-row
       align="end" >
-  <VertigoBackButton routeBack="/PageDrapeauxRouges"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageHints"></VertigoPasserButton>
+  <VertigoBackButton routeBack="/PageTraumatisme"></VertigoBackButton>
         </v-row>
   </template>
     
     
 <script setup>
   import VertigoBackButton from '@/components/VertigoBackButton.vue';
-  import VertigoPasserButton from '@/components/VertigoPasserButton.vue';
   import VertigoAppBar from '@/components/VertigoAppBar.vue';
 
   // -- utilisation du state global
   import { storeToRefs } from 'pinia'
   import { useAppStore } from '@/store/app'
   const app = useAppStore()
-  const { listePages,pageDeRetour,vertigesMaintenant } = storeToRefs(app)
-  pageDeRetour.value="/PageVertigesMaintenant"
-  listePages.value.push(["Vertige maintenant", "/PageVertigeMaintenant"])
+  const {ORL2 } = storeToRefs(app)
 </script>
 
 <style scoped>
-.mr-4{
-    background-color: #CFCFCF;
-    color: #20285F; 
-    border: 4px solid #20285F;
-    width: 500px;
-    font-size: 30px;
-    
 
-}
 .bouton{
     background-color: #CFCFCF;
-    color: #20285F;
+    color: #20285F; 
     border: 4px solid #20285F;
     width: 500px;
     font-size: 30px;
@@ -70,17 +68,15 @@
 .question{
     color:#20285F;
     font-family: Manjari;
-    font-size: 50px;
+    font-size: 40px;
 }
 .v-btn-toggle {
   flex-direction: column;
   height: 100px;
 }
-.v-btn-toggle .v-btn {
-  margin-bottom: 12px; /* Ajustez la valeur selon vos besoins */
+.v-btn {
+  margin-bottom: 40px; /* Ajustez la valeur selon vos besoins */
 }
-
-
 
 </style>
     

@@ -4,8 +4,10 @@
       justify="center">
       <v-col>
         <VertigoAppBar></VertigoAppBar>
-      <h2 class="question">Y-a-t-il des vertiges maintenant ?</h2>
-      <p>{{ vertigesMaintenant }}</p>
+      <h2 class="question">Traumatisme ?</h2>
+      <p>{{ traumatisme }}</p>
+      <br>
+      <br>
       <br>
       <br>
       <v-btn-toggle v-model="vertigesMaintenant" color="deep-purple-accent-3">
@@ -13,14 +15,16 @@
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PageHints">
+            to="/PageORL1"
+            style="text-transform: capitalize; letter-spacing: normal;">
             Oui
       </v-btn>
       <v-btn class="bouton"
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PageNystagmusSpontane">
+            to="/PageORL2"
+            style="text-transform: capitalize; letter-spacing: normal;">
             Non
       </v-btn>
       </v-btn-toggle>
@@ -30,24 +34,23 @@
     <br>
     <v-row
       align="end" >
-  <VertigoBackButton routeBack="/PageDrapeauxRouges"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageHints"></VertigoPasserButton>
+  <VertigoBackButton :routeBack="pageDeRetour"></VertigoBackButton>
+  <VertigoPasserButton passerQuestion="/PageORL1"></VertigoPasserButton>
         </v-row>
   </template>
     
     
 <script setup>
   import VertigoBackButton from '@/components/VertigoBackButton.vue';
-  import VertigoPasserButton from '@/components/VertigoPasserButton.vue';
   import VertigoAppBar from '@/components/VertigoAppBar.vue';
+  import VertigoPasserButton from '@/components/VertigoPasserButton.vue';
 
   // -- utilisation du state global
   import { storeToRefs } from 'pinia'
   import { useAppStore } from '@/store/app'
   const app = useAppStore()
-  const { listePages,pageDeRetour,vertigesMaintenant } = storeToRefs(app)
-  pageDeRetour.value="/PageVertigesMaintenant"
-  listePages.value.push(["Vertige maintenant", "/PageVertigeMaintenant"])
+  const { listePages,pageDeRetour,traumatisme } = storeToRefs(app)
+  listePages.value.push(["Traumatisme", "/PageTraumatisme"])
 </script>
 
 <style scoped>
@@ -70,7 +73,7 @@
 .question{
     color:#20285F;
     font-family: Manjari;
-    font-size: 50px;
+    font-size: 40px;
 }
 .v-btn-toggle {
   flex-direction: column;

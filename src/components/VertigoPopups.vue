@@ -1,0 +1,48 @@
+<template>
+    <v-dialog max-width="500">
+    <template v-slot:activator="{ props: activatorProps }">
+      <v-btn
+        v-bind="activatorProps"
+        color="surface-variant"
+        variant="flat"
+        size="xxs"
+        >
+        <v-icon icon="mdi-information"></v-icon>
+       </v-btn>
+    </template>
+  
+  
+    <template v-slot:default="{ isActive }">
+      <v-card title="Informations complémentaires">
+        <v-card-text>
+          {{props.texte}}
+         </v-card-text>
+  
+  
+        <v-card-actions>
+          <v-spacer></v-spacer>
+  
+  
+          <v-btn
+            text="Fermer"
+            @click="isActive.value = false"
+          ></v-btn>
+        </v-card-actions>
+      </v-card>
+    </template>
+  </v-dialog>
+  </template>
+  
+  
+  <script setup>
+  import { defineProps } from 'vue';
+  
+  
+  const props = defineProps({
+    texte: String // Définissez le type de la propriété text comme une chaîne de caractères
+  });
+  </script>
+  
+  
+  
+  
