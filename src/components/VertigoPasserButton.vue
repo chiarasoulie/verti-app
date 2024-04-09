@@ -1,6 +1,6 @@
 
 <template>
-    <v-row>
+    <v-row justify="end">
         <v-btn class="bouton"
               size="x-large"
               rounded="xl"

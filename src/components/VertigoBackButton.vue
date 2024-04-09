@@ -7,7 +7,7 @@
 
 -->
 <template>
-  <v-row>
+  <v-row justify="start">
       <v-btn
             size="x-large"
             rounded="xl"
