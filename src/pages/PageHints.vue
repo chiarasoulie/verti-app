@@ -5,7 +5,7 @@
     <v-col>
       <VertigoAppBar></VertigoAppBar>
     <p>Hints</p>
-    <p>{{ pageDeRetour }}</p>
+
     <p>{{ hints.Hi }}</p>
 
     <v-btn-toggle v-model="hints.Hi" color="deep-purple-accent-3">

@@ -5,7 +5,7 @@
       <v-col>
         <VertigoAppBar></VertigoAppBar>
       <h2 class="question">Y-a-t-il des vertiges maintenant ?</h2>
-      <p>{{ vertigesMaintenant }}</p>
+   
       <br>
       <br>
       <v-btn-toggle v-model="vertigesMaintenant" color="deep-purple-accent-3">

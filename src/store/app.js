@@ -28,7 +28,7 @@ export const useAppStore = defineStore('app', () => {
 
 // --- fonction réninit state global
 function reset() {
-  mapListePages.value =[]
+  listePages.value =[]
   pageDeRetour.value =""
   message.value = ""
   drapeauxRouge.value = null 
