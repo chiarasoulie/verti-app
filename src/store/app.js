@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', () => {
  // ------  le state global
+ const diag = ref("")
  const listePages = ref([])
  const pageDeRetour = ref("")
  const message = ref("") // message pour la page urgence si besoin
@@ -28,6 +29,7 @@ export const useAppStore = defineStore('app', () => {
 
 // --- fonction réninit state global
 function reset() {
+  diag.value =""
   listePages.value =[]
   pageDeRetour.value =""
   message.value = ""
@@ -52,7 +54,8 @@ function reset() {
   traumatismes.value = null
   
 }
- return { listePages,
+ return { diag,
+          listePages,
           pageDeRetour,
           message,
           drapeauxRouge, 

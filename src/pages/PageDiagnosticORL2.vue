@@ -42,6 +42,13 @@
 <script setup>
 import VertigoAppBar from '@/components/VertigoAppBar.vue';
 import VertigoGenererPDF from '@/components/VertigoGenererPDF.vue';
+import { storeToRefs } from 'pinia'
+import { useAppStore } from '@/store/app'
+
+const app = useAppStore()
+const { diag } = storeToRefs(app)
+
+diag.value="MENIERE (EN CRISE)/NEVRITE(DVA)/DEFICIT VESTIBULAIRE BRUSQUE";
 
 </script>
 

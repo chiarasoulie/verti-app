@@ -9,12 +9,11 @@
 <template>
   <v-row justify="start">
       <v-btn
-            size="x-large"
-            rounded="xl"
+            class="bouton rond"
             variant="elevated"
             @click="updateListePages"
             :to="props.routeBack">
-            Back
+            <v-img src="../assets/Flèche retour.png" height="45" width="45"></v-img>
       </v-btn>
   </v-row>
 </template>
@@ -34,4 +33,16 @@ function updateListePages(){
 listePages.value.splice(-2);
 }
 </script>
+
+<style scoped>
+.bouton.rond {
+    width: 50px; /* Ajustez la taille du bouton selon vos besoins */
+    height: 50px; /* Assurez-vous que la largeur et la hauteur sont égales pour obtenir un cercle */
+    border-radius: 50%; /* Assurez-vous que le bouton a un rayon de bordure de 50% pour le rendre circulaire */
+    padding: 0; /* Supprimez le rembourrage pour que l'image remplisse le bouton */
+    box-shadow: none;
+}
+
+/* Ajoutez vos styles personnalisés ici si nécessaire */
+</style>
 

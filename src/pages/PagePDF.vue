@@ -1,5 +1,11 @@
 <template>
     <v-container>
+      <VertigoAppBar></VertigoAppBar>
+      <v-row align="center" justify="center">
+      <v-col cols="12">
+        <h2>Formulaire de Consultation</h2>
+      </v-col>
+    </v-row>
       <!-- Formulaire pour collecter les données -->
       <v-form @submit.prevent="generatePDF">
         <v-row align="center" justify="center">
@@ -18,7 +24,7 @@
         </v-row>
         <v-row align="center" justify="center">
           <v-col>
-            <v-btn type="submit" color="primary">Générer PDF</v-btn>
+            <v-btn type="submit" color="#20285F" dark id="btn">Générer PDF</v-btn>
           </v-col>
         </v-row>
       </v-form>
@@ -26,6 +32,11 @@
   </template>
   
   <script setup>
+  import VertigoAppBar from '@/components/VertigoAppBar.vue';
+  import { storeToRefs } from 'pinia'
+  import { useAppStore } from '@/store/app'
+  const app = useAppStore()
+  const { diag,listePages } = storeToRefs(app)
   import { ref } from 'vue'
   import { jsPDF } from 'jspdf'
   import logo from '../assets/Logoparametre.png' // Chemin vers votre logo
@@ -56,6 +67,7 @@
   const logoMargin = 10; // Marge en mm
   const logoX = pageWidth - logoWidth - logoMargin; // Position X du logo
   const logoY = logoMargin; // Position Y du logo
+  let posY = 110;
 
   // Position des informations à droite du logo
   const infoX = logoX + logoWidth + 10; // Position X des informations
@@ -67,15 +79,20 @@
   const formattedTime = currentDate.toLocaleTimeString();
 
   // Ajouter les données du formulaire au PDF
+  doc.text(`Compte rendu de la consultation`, 10, 10);
+  doc.text(`Fait le : ${currentDate.toLocaleDateString()}`, 10, 20);
+  doc.text(`A : ${currentDate.toLocaleTimeString()}`, 10, 30);
   doc.text(`Nom: ${nom.value}`, 10, infoY);
   doc.text(`Prénom: ${prenom.value}`, 10, infoY + 10);
   doc.text(`Date de naissance: ${selectedDate.toLocaleDateString()}`, 10, infoY + 20);
   doc.text(`Nom du docteur: ${medecin.value}`, 10, infoY + 30);
-  doc.text(`Compte rendu de la consultation`, 10, 10);
-  doc.text(`Fait le : ${currentDate.toLocaleDateString()}`, infoX, infoY);
-  doc.text(`A : ${currentDate.toLocaleTimeString()}`, infoX, infoY + 10);
-  doc.text(`Bilan de l'examen clinique : `, infoX, infoY + 20);
-  doc.text(`Conclusion`, infoX, infoY + 30);
+
+  doc.text(`Bilan de l'examen clinique : `, 10, infoY + 50);
+  affichageHistorique();
+
+  doc.text(`Diagnostic:`, 10, 170)
+  doc.text(`diagnostique proposé: ${diag.value}`, 10, 180);
+
 
 
   // Ajouter le logo en haut à droite avec une taille réduite
@@ -83,5 +100,19 @@
 
   // Enregistrement (inclure date et heure dans le nom du fichier)
   doc.save(`Bilan${currentDate.toISOString()}.pdf`);
+
+  function affichageHistorique(){
+  for(let page of listePages.value){
+    doc.text(`${page[0]}: ${page[2]}`, 10, posY)
+    posY += 10;
+    }
+  }
 }
   </script>
+
+<style scoped>
+.btn{
+    background-color: #20285F; 
+    color: white; 
+}
+</style>

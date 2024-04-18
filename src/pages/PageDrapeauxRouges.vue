@@ -245,7 +245,7 @@ function remplirListe(valeur){
 }
 
 .bouton:active {
-    background-color: rgb(234, 0, 255);
+    background-color: #20285F;
 }
 
 .text {

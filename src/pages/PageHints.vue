@@ -4,52 +4,80 @@
     justify="center">
     <v-col>
       <VertigoAppBar></VertigoAppBar>
-    <p>Hints</p>
+    <h2>Hints</h2>
+    <br>
 
-    <p>{{ hints.Hi }}</p>
+    <div class=posi>
+      <p><VertigoPopups texte="info sur les HI"></VertigoPopups></p>
+    </div>
 
-    <v-btn-toggle v-model="hints.Hi" color="deep-purple-accent-3">
+    <v-btn-toggle v-model="hints.Hi" color="#20285F">
       <v-btn
             size="x-large"
-            value="-">
+            value="-"
+            rounded="xl">
             ---
         </v-btn>
+        <div class = esp></div>
+        <div class = posi>
         <p>Hi</p>
-        <p><VertigoPopups texte="info sur les Hi"></VertigoPopups></p>
+        </div>
+        <div class = esp></div>
+
         <v-btn
             size="x-large"
-            value="+">
+            value="+"
+            rounded="xl">
             +++
         </v-btn>
     </v-btn-toggle>
-    <p>{{ hints.N }}</p>
-    <v-btn-toggle v-model="hints.N" color="deep-purple-accent-3">
+
+    <div class = posi><p><VertigoPopups texte="info sur les N"></VertigoPopups></p></div>
+    <v-btn-toggle v-model="hints.N" color="#20285F">
       <v-btn
             size="x-large"
-            value="-">
+            value="-"
+            rounded="xl">
             ---
         </v-btn>
+        <div class = esp></div>
+        <div class = posi>
         <p>N</p>
-        <p><VertigoPopups texte="info sur les N"></VertigoPopups></p>          <v-btn
+        </div>
+        <div class = esp></div> 
+
+         <v-btn
             size="x-large"
-            value="+">
+            value="+"
+            rounded="xl">
             +++
         </v-btn>
     </v-btn-toggle>
-    <p>{{ hints.TS }}</p>
-    <v-btn-toggle v-model="hints.TS" color="deep-purple-accent-3">
+    <div class = posi><p><VertigoPopups texte="info sur les TS"></VertigoPopups></p></div>
+    <v-btn-toggle v-model="hints.TS" color="#20285F">
       <v-btn
             size="x-large"
-            value="-">
+            value="-"
+            rounded="xl">
             ---
         </v-btn>
+        <div class = esp></div>
+        <div class = posi>
         <p>TS</p>
-        <p><VertigoPopups texte="info sur les TS"></VertigoPopups></p>          <v-btn
+        </div> 
+        <div class = esp></div>
+
+        <v-btn
             size="x-large"
-            value="+">
+            value="+"
+            rounded=xl>
             +++
         </v-btn>
     </v-btn-toggle>
+    <br>
+    <br>
+    <br>
+    <br>
     </v-col>
   </v-row>
   <v-btn
@@ -57,6 +85,7 @@
       rounded="xl"
       variant="elevated"
       @click="valider"
+      color="#20285F" dark
       >
       Valider
   </v-btn>
@@ -90,10 +119,12 @@ function valider() {
   if (hints.value.Hi == "-" && hints.value.N == "-" && hints.value.TS == "-") {
     message.value = "Vertige peripherique"
     router.push({ name: '/PageVertigePeripherique' });
+    remplirListe('non');
   }
   if (hints.value.Hi == "+" && hints.value.N == "+" && hints.value.TS == "+") {
     message.value = "Vertige central"
     router.push({ name: '/PageFinUrgence' });
+    remplirListe('oui');
   }
   else if( (hints.value.Hi == "+" && hints.value.N == "+" && hints.value.TS == "-")
   || (hints.value.Hi == "+" && hints.value.N == "-" && hints.value.TS == "-")
@@ -103,8 +134,24 @@ function valider() {
   || (hints.value.Hi == "+" && hints.value.N == "-" && hints.value.TS == "+") )
 {
     router.push({ name: '/PageExamenNeurologique'});
+    remplirListe('pas tous');
 
 
+}
+function remplirListe(valeur){
+  let dernier = listePages.value.length -1;
+  listePages.value[dernier].push(valeur)
 }
 }
 </script>
+<style scpode>
+.posi{
+  position: relative;
+  top: 10px;
+}
+.esp{
+  width: 10px;
+}
+
+
+</style>
