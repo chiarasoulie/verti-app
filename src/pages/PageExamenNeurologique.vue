@@ -15,6 +15,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageCervicalgies"
+            @click="remplirListe('Normal')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Normal
       </v-btn>
@@ -23,6 +24,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageTraumatisme"
+            @click="remplirListe('Syndrome vestibulaire périphérique')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
             Syndrome vestibulaire <br>périphérique
       </v-btn>
@@ -31,6 +33,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageFauxVertige"
+            @click="remplirListe('Autre cause neurologique')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
             Autre cause <br>neurologique
       </v-btn>
@@ -58,6 +61,11 @@
   const { listePages,pageDeRetour,examen} = storeToRefs(app)
   pageDeRetour.value="/PageExamenNeurologique"
   listePages.value.push(["Examen neurologique", "/PageExamenNeurologique"])
+
+  function remplirListe(valeur){
+    let dernier = listePages.value.length- 1;
+    listePages.value[dernier].push(valeur)
+  }
   
 </script>
 

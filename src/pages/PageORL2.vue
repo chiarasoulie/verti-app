@@ -15,6 +15,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageDiagnosticORL2"
+            @click="remplirListe('Normal')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Normal
       </v-btn>
@@ -23,6 +24,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageMeniereEnCrise"
+            @click="remplirListe('Surdité, acouphènes')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Surdité, Acouphènes
       </v-btn>
@@ -31,6 +33,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageLabyrinthite"
+            @click="remplirListe('Otite, Otalgie, Otorrhée')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
             Otite, Otalgie, Otorrhée
       </v-btn>
@@ -53,7 +56,13 @@
   import { storeToRefs } from 'pinia'
   import { useAppStore } from '@/store/app'
   const app = useAppStore()
-  const {ORL2 } = storeToRefs(app)
+  const {ORL2, listePages } = storeToRefs(app)
+  listePages.value.push(["Résultat ORL", "/PageORL2"])
+
+function remplirListe(valeur){
+  let dernier= listePages.value.length -1;
+  listePages.value[dernier].push(valeur)
+}
 </script>
 
 <style scoped>

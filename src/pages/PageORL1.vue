@@ -15,6 +15,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageCommotionLabyrinthique"
+            @click="remplirListe('Normal')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Normal
       </v-btn>
@@ -23,6 +24,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageFractureRocher"
+            @click="remplirListe('Surdité +++')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Surdité +++
       </v-btn>
@@ -31,6 +33,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageCommotionLabyrinthique"
+            @click="remplirListe('Surdité en amélioration, acouphènes')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
             Surdité en amélioration, <br> Acouphènes
       </v-btn>
@@ -53,8 +56,15 @@
   // -- utilisation du state global
   import { storeToRefs } from 'pinia'
   import { useAppStore } from '@/store/app'
+import { useLink } from 'vue-router';
   const app = useAppStore()
-  const { ORL1} = storeToRefs(app)
+  const { listePages,ORL1} = storeToRefs(app)
+  listePages.value.push(["Résultat ORL", "/PageORL1"])
+
+function remplirListe(valeur){
+  let dernier= listePages.value.length -1;
+  listePages.value[dernier].push(valeur)
+}
 </script>
 
 <style scoped>

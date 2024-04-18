@@ -13,14 +13,16 @@
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PageHints">
+            to="/PageHints"
+            @click="remplirListe('oui')">
             Oui
       </v-btn>
       <v-btn class="bouton"
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PageNystagmusSpontane">
+            to="/PageNystagmusSpontane"
+            @click="remplirListe('non')">
             Non
       </v-btn>
       </v-btn-toggle>
@@ -48,6 +50,12 @@
   const { listePages,pageDeRetour,vertigesMaintenant } = storeToRefs(app)
   pageDeRetour.value="/PageVertigesMaintenant"
   listePages.value.push(["Vertige maintenant", "/PageVertigeMaintenant"])
+
+  function remplirListe(valeur){
+    let dernier = listePages.value.length - 1;
+    listePages.value[dernier].push(valeur)
+  }
+
 </script>
 
 <style scoped>

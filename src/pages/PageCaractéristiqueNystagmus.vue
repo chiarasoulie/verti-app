@@ -15,6 +15,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageVPPB"
+            @click="remplirListe('Vertige + Nystagmus typique')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
             Vertige + Nystagmus typique
       </v-btn>
@@ -23,6 +24,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageVertigeCentral"
+            @click="remplirListe('Vertige + Nystagmus atypique')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
             +/- Vertige + Nystagmus <br> atypique
       </v-btn>
@@ -31,6 +33,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageAvisSpecialiste"
+            @click="remplirListe('Pas de vertige + Nystagmus typique')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
             Pas de vertige + Nystagmus <br> typique
       </v-btn>
@@ -55,6 +58,11 @@
   const app = useAppStore()
   const { listePages,caracteristique} = storeToRefs(app)
   listePages.value.push(["Caractéristique Nystagmus", "/PageCaracteristiqueNystagmus"])
+
+  function remplirListe(valeur){
+    let dernier = listePages.value.length - 1;
+    listePages.value[dernier].push(valeur)
+  }
 </script>
 
 <style scoped>

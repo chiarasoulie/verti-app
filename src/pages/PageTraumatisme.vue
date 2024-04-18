@@ -16,6 +16,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageORL1"
+            @click="remplirListe('oui')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Oui
       </v-btn>
@@ -24,6 +25,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageORL2"
+            @click="remplirListe('non')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Non
       </v-btn>
@@ -51,6 +53,11 @@
   const app = useAppStore()
   const { listePages,pageDeRetour,traumatisme } = storeToRefs(app)
   listePages.value.push(["Traumatisme", "/PageTraumatisme"])
+
+  function remplirListe(valeur){
+    let dernier = listePages.value.length - 1;
+    listePages.value[dernier].push(valeur)
+  }
 </script>
 
 <style scoped>

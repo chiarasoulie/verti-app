@@ -169,7 +169,7 @@
             class="bouton"
             rounded="xl"
             drapeauxRouge.value="non"
-            @click="updateDrapeauxRouge('non')"
+            @click="pasDeDrapeauxRouges('non')"
             to="/PageVertigesMaintenant">
  
             <div class="image">
@@ -211,11 +211,22 @@ function versUrgence() {
   updateDrapeauxRouge('oui')
   message.value = 'Drapeaux rouges'
   router.push({ name: '/PageFinUrgence' })
+  remplirListe('oui');
+}
+
+function pasDeDrapeauxRouges(val){
+  updateDrapeauxRouge(val);
+  remplirListe(val);
 }
 
 function updateDrapeauxRouge(value){
   drapeauxRouge.value = value;
 }
+
+function remplirListe(valeur){
+    let dernier = listePages.value.length - 1;
+    listePages.value[dernier].push(valeur)
+  }
 
 </script>
 
