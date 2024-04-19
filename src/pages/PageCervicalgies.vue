@@ -10,6 +10,8 @@
       <br>
       <br>
       <br>
+      <br>
+      <br>
       <v-btn-toggle v-model="vertigesMaintenant" color="deep-purple-accent-3">
         <v-btn class="mr-4"
             size="x-large"
@@ -34,11 +36,20 @@
     </v-row>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <v-row
-      align="end" >
-  <VertigoBackButton routeBack="/PageExamenNeurologique"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageNystagmusDeclenche"></VertigoPasserButton>
+      align="end" class="custom-row" dense>
+  <VertigoBackButton routeBack="/PageExamenNeurologique"class="custom-button"></VertigoBackButton>
+  <VertigoPasserButton passerQuestion="/PageNystagmusDeclenche"class="custom-button"></VertigoPasserButton>
     </v-row>
+
   </template>
     
     
@@ -89,6 +100,16 @@
 }
 .v-btn-toggle .v-btn {
   margin-bottom: 12px; /* Ajustez la valeur selon vos besoins */
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 </style>

@@ -5,17 +5,16 @@
       <v-col>
       <VertigoAppBar></VertigoAppBar>
       <br>
-      <div class="diagnostic">
+      <div class="diagnostic" style="text-align: center;font-family: Manjari; color: #20285F">
         <h4>D'après l'examen clinique, on s'oriente vers :</h4>
         <br>
         <h2>COMMOTION LABYRINTHIQUE</h2>
       </div>
       <br>
       <br>
-      <div class="infoplus">
-        <h5> Pour une meilleure prise en charge</h5>
-        <v-btn icon="$vuetify">
-        </v-btn>
+      <div style="display: inline-block; text-align: center;font-family: Manjari;">
+        <span style="display: inline-block; vertical-align: middle; margin-right: 10px; color: #20285F;">Pour une meilleure prise en charge</span>
+        <img src="../assets/Plus d'infos.png" alt="Image infos" style="width: 20px; height: auto; vertical-align: middle;">
       </div>
       <br>
       <br>
@@ -24,15 +23,23 @@
       <br>
       <br>
       <div class="separation"></div>
-      <div class="pdf">
+      <div class="pdf"style="text-align: center;font-family: Manjari; color: #20285F">
         <h5>Générer l'examen clinique et le diagnostic sous forme de PDF</h5>
       </div>
       </v-col>
     </v-row>
     <VertigoGenererPDF></VertigoGenererPDF>
+    <br>
+    <br>
+    <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton routeBack="/PageCaractéristiqueNystagmus" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PagePDF" class="custom-button"></VertigoPasserButton>
+    </v-row>
 </template>
 
 <script setup>
+import VertigoBackButton from '@/components/VertigoBackButton.vue';
+import VertigoPasserButton from '@/components/VertigoPasserButton.vue';
 import VertigoAppBar from '@/components/VertigoAppBar.vue';
 import VertigoGenererPDF from '@/components/VertigoGenererPDF.vue';
 import { storeToRefs } from 'pinia'
@@ -67,5 +74,15 @@ diag.value="COMMOTION LABYRINTHIQUE";
 }
 .infoplus h5 {
   margin-right: 10px; /* Ajouter un espace entre le texte et le bouton */
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 </style>

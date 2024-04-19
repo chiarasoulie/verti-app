@@ -15,7 +15,7 @@
             size="x-large"
             rounded="xl"
             variant="elevated"
-            to="/PageTraumatisme"
+            to="/PageCaracteristiqueNystagmus"
             @click="remplirListe('oui')"
             style="text-transform: capitalize; letter-spacing: normal;">
             Oui
