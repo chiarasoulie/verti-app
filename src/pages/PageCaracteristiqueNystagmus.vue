@@ -9,7 +9,6 @@
       <br>
       <br>
       <br>
-      <br>
         <v-btn class="bouton"
             size="x-large"
             rounded="xl"
@@ -17,7 +16,7 @@
             to="/PageVPPB"
             @click="remplirListe('Vertige + Nystagmus typique')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
-            Vertige + Nystagmus typique
+            Vertige + Nystagmus<br> typique
       </v-btn>
       <v-btn class="bouton"
             size="x-large"
@@ -35,15 +34,15 @@
             to="/PageAvisSpecialiste"
             @click="remplirListe('Pas de vertige + Nystagmus typique')"
             style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
-            Pas de vertige + Nystagmus <br> typique
+            Pas de vertige +<br> Nystagmus  typique
       </v-btn>
       </v-col>
     </v-row>
     <br>
     <br>
-    <v-row
-      align="end" >
-      <VertigoBackButton routeBack="/PagenystagmusSpontane"></VertigoBackButton>
+    <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton routeBack="/PageCaractéristiqueNystagmus" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PagePDF" class="custom-button"></VertigoPasserButton>
     </v-row>
   </template>
     
@@ -51,6 +50,7 @@
 <script setup>
   import VertigoBackButton from '@/components/VertigoBackButton.vue';
   import VertigoAppBar from '@/components/VertigoAppBar.vue';
+  import VertigoPasserButton from '@/components/VertigoPasserButton.vue';
 
   // -- utilisation du state global
   import { storeToRefs } from 'pinia'
@@ -85,6 +85,16 @@
 }
 .v-btn {
   margin-bottom: 40px; /* Ajustez la valeur selon vos besoins */
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 </style>
