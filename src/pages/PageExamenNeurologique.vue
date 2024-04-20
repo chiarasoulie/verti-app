@@ -41,11 +41,10 @@
     </v-row>
     <br>
     <br>
-    <v-row
-      align="end" >
-  <VertigoBackButton routeBack="/PageHints"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageCervicalgies"></VertigoPasserButton>
-        </v-row>
+    <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton routeBack="/PageCaractéristiqueNystagmus" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PageCervicalgies" class="custom-button"></VertigoPasserButton>
+    </v-row>
   </template>
     
     
@@ -75,6 +74,7 @@
     background-color: #CFCFCF;
     color: #20285F; 
     border: 4px solid #20285F;
+    font-family: Manjari;
     width: 500px;
     font-size: 30px;
 }
@@ -89,6 +89,16 @@
 }
 .v-btn {
   margin-bottom: 40px; /* Ajustez la valeur selon vos besoins */
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 </style>

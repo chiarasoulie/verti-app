@@ -4,11 +4,11 @@
       justify="center">
       <v-col>
       <VertigoAppBar></VertigoAppBar>
-      <h2 class="question">D'après l'examen clinique on s'oriente vers : </h2>
+      <h2 class="question"style="text-align: center;font-family: Manjari; color: #20285F">D'après l'examen clinique on s'oriente vers : </h2>
       <p>{{ vertigeperipherique }}</p>
       <br>
       <br>
-      <div class="diagnostic">
+      <div class="diagnostic"style="text-align: center;font-family: Manjari; color: #20285F">
         <h1>VERTIGE PERIPHERIQUE</h1>
       </div>
       <br>
@@ -20,18 +20,19 @@
             rounded="xl"
             variant="elevated"
             to="/PageTraumatisme"
-            style="text-transform: capitalize; letter-spacing: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;">
             Suivant
       </v-btn>
       </v-col>
     </v-row>
     <br>
     <br>
-    <v-row
-      align="end" >
-  <VertigoBackButton routeBack="/PageHints"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageTraumatisme"></VertigoPasserButton>
-        </v-row>
+    <br>
+    <br>
+    <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton routeBack="/PageHints" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PageTraumatisme" class="custom-button"></VertigoPasserButton>
+    </v-row>
   </template>
 
 <script setup>
@@ -62,5 +63,15 @@ const { listePages,pageDeRetour,vertigeperipherique} = storeToRefs(app)
     color: white; 
     width: 500px;
     font-size: 30px;
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 </style>

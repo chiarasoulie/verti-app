@@ -42,7 +42,7 @@
     <br>
     <v-row align="end" class="custom-row" dense>
       <VertigoBackButton routeBack="/PageCaractéristiqueNystagmus" class="custom-button"></VertigoBackButton>
-      <VertigoPasserButton passerQuestion="/PagePDF" class="custom-button"></VertigoPasserButton>
+      <VertigoPasserButton passerQuestion="/PageVPPB" class="custom-button"></VertigoPasserButton>
     </v-row>
   </template>
     
@@ -56,8 +56,9 @@
   import { storeToRefs } from 'pinia'
   import { useAppStore } from '@/store/app'
   const app = useAppStore()
-  const { listePages,caracteristique} = storeToRefs(app)
+  const { listePages,caracteristique, pageDeRetour} = storeToRefs(app)
   listePages.value.push(["Caractéristique Nystagmus", "/PageCaracteristiqueNystagmus"])
+  pageDeRetour.value="/PageCaracteristiqueNystagmus"
 
   function remplirListe(valeur){
     let dernier = listePages.value.length - 1;
@@ -69,6 +70,7 @@
 
 .bouton{
     background-color: #CFCFCF;
+    font-family: Manjari;
     color: #20285F; 
     border: 4px solid #20285F;
     width: 500px;

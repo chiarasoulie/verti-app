@@ -24,7 +24,7 @@
       <br>
       <div class="separation"></div>
       <div class="pdf"style="text-align: center;font-family: Manjari; color: #20285F">
-        <h5>Générer l'examen clinique et le diagnostic sous forme de PDF</h5>
+        <h4>Générer l'examen clinique et le diagnostic sous forme de PDF</h4>
       </div>
       </v-col>
     </v-row>

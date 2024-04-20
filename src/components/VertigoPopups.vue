@@ -3,11 +3,11 @@
     <template v-slot:activator="{ props: activatorProps }">
       <v-btn
         v-bind="activatorProps"
-        color="surface-variant"
+        color="white"
         variant="flat"
         size="xxs"
         >
-        <v-icon icon="mdi-information"></v-icon>
+        <v-icon icon="mdi-information" color="#20285F"></v-icon>
        </v-btn>
     </template>
   

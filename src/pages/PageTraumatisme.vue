@@ -10,6 +10,8 @@
       <br>
       <br>
       <br>
+      <br>
+    <br>
       <v-btn-toggle v-model="vertigesMaintenant" color="deep-purple-accent-3">
         <v-btn class="mr-4"
             size="x-large"
@@ -17,7 +19,7 @@
             variant="elevated"
             to="/PageORL1"
             @click="remplirListe('oui')"
-            style="text-transform: capitalize; letter-spacing: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;">
             Oui
       </v-btn>
       <v-btn class="bouton"
@@ -26,7 +28,7 @@
             variant="elevated"
             to="/PageORL2"
             @click="remplirListe('non')"
-            style="text-transform: capitalize; letter-spacing: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;">
             Non
       </v-btn>
       </v-btn-toggle>
@@ -34,11 +36,18 @@
     </v-row>
     <br>
     <br>
-    <v-row
-      align="end" >
-  <VertigoBackButton :routeBack="pageDeRetour"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageORL1"></VertigoPasserButton>
-        </v-row>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton :routeBack="pageDeRetour" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PageORL2" class="custom-button"></VertigoPasserButton>
+    </v-row>
+    
   </template>
     
     
@@ -89,6 +98,17 @@
 .v-btn-toggle .v-btn {
   margin-bottom: 12px; /* Ajustez la valeur selon vos besoins */
 }
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
 
 
 

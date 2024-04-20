@@ -3,12 +3,12 @@
       <VertigoAppBar></VertigoAppBar>
       <v-row align="center" justify="center">
       <v-col cols="12">
-        <h2>Formulaire de Consultation</h2>
+        <h2 style="text-align: center;font-family: Manjari; color: #20285F">Formulaire de Consultation</h2>
       </v-col>
     </v-row>
       <!-- Formulaire pour collecter les données -->
       <v-form @submit.prevent="generatePDF">
-        <v-row align="center" justify="center">
+        <v-row align="center" justify="center" style="font-family: Manjari">
           <v-col cols="12" md="6">
             <v-text-field v-model="nom" label="Nom" required></v-text-field>
           </v-col>
@@ -24,7 +24,7 @@
         </v-row>
         <v-row align="center" justify="center">
           <v-col>
-            <v-btn type="submit" color="#20285F" dark id="btn">Générer PDF</v-btn>
+            <v-btn type="submit" color="#20285F" dark id="btn" style="font-family: Manjari">Générer PDF</v-btn>
           </v-col>
         </v-row>
       </v-form>

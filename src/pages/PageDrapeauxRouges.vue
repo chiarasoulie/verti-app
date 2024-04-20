@@ -5,9 +5,9 @@
     justify="center">
     <v-col>
     <VertigoAppBar></VertigoAppBar>
-    <p>Y-a-t-il des drapeaux rouges ?</p>
+    <h3 style="font-family: Manjari; color: #20285F">Y-a-t-il des drapeaux rouges ?</h3>
     <p>{{ drapeauxRouge }}</p>
-   
+    <br>
         <v-btn
             class="bouton"
             rounded="xl"

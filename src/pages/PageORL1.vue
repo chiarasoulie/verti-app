@@ -4,7 +4,7 @@
       justify="center">
       <v-col>
         <VertigoAppBar></VertigoAppBar>
-      <h2 class="question">Résultat de l'examen ORL : </h2>
+      <h2 class="question" style="text-align: center;font-family: Manjari; color: #20285F">Résultat de l'examen ORL : </h2>
       <p>{{ ORL1 }}</p>
       <br>
       <br>
@@ -16,7 +16,7 @@
             variant="elevated"
             to="/PageCommotionLabyrinthique"
             @click="remplirListe('Normal')"
-            style="text-transform: capitalize; letter-spacing: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;">
             Normal
       </v-btn>
       <v-btn class="bouton"
@@ -25,7 +25,7 @@
             variant="elevated"
             to="/PageFractureRocher"
             @click="remplirListe('Surdité +++')"
-            style="text-transform: capitalize; letter-spacing: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;">
             Surdité +++
       </v-btn>
       <v-btn class="bouton"
@@ -34,24 +34,24 @@
             variant="elevated"
             to="/PageCommotionLabyrinthique"
             @click="remplirListe('Surdité en amélioration, acouphènes')"
-            style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;height: auto;white-space: normal;font-family: Manjari;">
             Surdité en amélioration, <br> Acouphènes
       </v-btn>
       </v-col>
     </v-row>
     <br>
     <br>
-    <v-row
-      align="end" >
-  <VertigoBackButton routeBack="/PageTraumatisme"></VertigoBackButton>
-
-      </v-row>
+    <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton routeBack="/PageTraumatisme" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PageCommotionLayrinthique" class="custom-button"></VertigoPasserButton>
+    </v-row>
   </template>
     
     
 <script setup>
   import VertigoBackButton from '@/components/VertigoBackButton.vue';
   import VertigoAppBar from '@/components/VertigoAppBar.vue';
+  import VertigoPasserButton from '@/components/VertigoPasserButton.vue';
 
   // -- utilisation du state global
   import { storeToRefs } from 'pinia'
@@ -87,6 +87,16 @@ function remplirListe(valeur){
 }
 .v-btn {
   margin-bottom: 40px; /* Ajustez la valeur selon vos besoins */
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 </style>

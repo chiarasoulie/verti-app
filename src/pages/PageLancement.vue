@@ -1,5 +1,4 @@
 
-import VertigoAppBar from '@/components/VertigoAppBar.vue';
 <template>
     <v-row
    align="center" 
@@ -65,6 +64,7 @@ import VertigoAppBar from '@/components/VertigoAppBar.vue';
   margin-right: auto;
   float: left;
   width: 20%;
+  text-align: center;
 }
 .texte1 {
   grid-column: 2;

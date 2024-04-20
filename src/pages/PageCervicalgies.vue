@@ -19,7 +19,7 @@
             variant="elevated"
             to="/PageTraumatisme"
             @click="remplirListe('oui')"
-            style="text-transform: capitalize; letter-spacing: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;">
             Oui
       </v-btn>
       <v-btn class="bouton"
@@ -28,7 +28,7 @@
             variant="elevated"
             to="/PageNystagmusDeclenche"
             @click="remplirListe('non')"
-            style="text-transform: capitalize; letter-spacing: normal;">
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;">
             Non
       </v-btn>
       </v-btn-toggle>
@@ -79,6 +79,7 @@
     border: 4px solid #20285F;
     width: 500px;
     font-size: 30px;
+    font-family: Manjari;
     
 
 }
@@ -88,6 +89,7 @@
     border: 4px solid #20285F;
     width: 500px;
     font-size: 30px;
+    font-family: Manjari;
 }
 .question{
     color:#20285F;

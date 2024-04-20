@@ -4,8 +4,10 @@
     justify="center">
     <v-col>
       <VertigoAppBar></VertigoAppBar>
-    <h2>Hints</h2>
+    <h1 style="text-align: center;font-family: Manjari; color: #20285F">HINTS</h1>
     <br>
+    <br>
+  <br>
 
     <div class=posi>
       <p><VertigoPopups texte="info sur les HI"></VertigoPopups></p>
@@ -15,19 +17,21 @@
       <v-btn
             size="x-large"
             value="-"
-            rounded="xl">
+            rounded="xl"
+            id="btn">
             ---
         </v-btn>
         <div class = esp></div>
         <div class = posi>
-        <p>Hi</p>
+        <p style="text-align: center;font-family: Manjari; color: #20285F">Hi</p>
         </div>
         <div class = esp></div>
 
         <v-btn
             size="x-large"
             value="+"
-            rounded="xl">
+            rounded="xl"
+            id="btn">
             +++
         </v-btn>
     </v-btn-toggle>
@@ -37,19 +41,22 @@
       <v-btn
             size="x-large"
             value="-"
-            rounded="xl">
+            rounded="xl"
+            id="btn"
+            >
             ---
         </v-btn>
         <div class = esp></div>
         <div class = posi>
-        <p>N</p>
+        <p style="text-align: center;font-family: Manjari; color: #20285F">N</p>
         </div>
         <div class = esp></div> 
 
          <v-btn
             size="x-large"
             value="+"
-            rounded="xl">
+            rounded="xl"
+            id="btn">
             +++
         </v-btn>
     </v-btn-toggle>
@@ -58,19 +65,22 @@
       <v-btn
             size="x-large"
             value="-"
-            rounded="xl">
+            rounded="xl"
+            id="btn">
             ---
         </v-btn>
         <div class = esp></div>
         <div class = posi>
-        <p>TS</p>
+        <p style="text-align: center;font-family: Manjari; color: #20285F">TS</p>
         </div> 
         <div class = esp></div>
 
         <v-btn
             size="x-large"
             value="+"
-            rounded=xl>
+            rounded=xl
+            id="btn"
+            >
             +++
         </v-btn>
     </v-btn-toggle>
@@ -89,11 +99,16 @@
       >
       Valider
   </v-btn>
-  <v-row
-      align="end" >
-  <VertigoBackButton :routeBack="pageDeRetour"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageExamenNeurologique"></VertigoPasserButton>
-        </v-row>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton :routeBack="pageDeRetour" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PageExamenNeurologique" class="custom-button"></VertigoPasserButton>
+  </v-row>
 </template>
  
  
@@ -110,6 +125,7 @@ import { useAppStore } from '@/store/app'
 const app = useAppStore()
 const { listePages,pageDeRetour, hints, message } = storeToRefs(app)
 listePages.value.push(["HINTS", "/PageHints"])
+pageDeRetour.value="/PageHints"
 
 // -- routage en fonction des hints
 import router from '@/router'
@@ -151,6 +167,20 @@ function remplirListe(valeur){
 }
 .esp{
   width: 10px;
+}
+#btn {
+    border: 2px solid #20285F; /* Couleur et taille de la bordure */
+    padding: 10px; /* Espacement à l'intérieur du bouton */
+  }
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 

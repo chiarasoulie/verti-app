@@ -4,16 +4,19 @@
       justify="center">
       <v-col>
         <VertigoAppBar></VertigoAppBar>
-      <h2 class="question">Y-a-t-il des vertiges maintenant ?</h2>
+      <h2 class="question"style="text-align: center;font-family: Manjari; color: #20285F">Y-a-t-il des vertiges maintenant ?</h2>
    
       <br>
       <br>
+      <br>
+    <br>
       <v-btn-toggle v-model="vertigesMaintenant" color="deep-purple-accent-3">
         <v-btn class="mr-4"
             size="x-large"
             rounded="xl"
             variant="elevated"
             to="/PageHints"
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;"
             @click="remplirListe('oui')">
             Oui
       </v-btn>
@@ -22,6 +25,7 @@
             rounded="xl"
             variant="elevated"
             to="/PageNystagmusSpontane"
+            style="text-transform: capitalize; letter-spacing: normal;font-family: Manjari;"
             @click="remplirListe('non')">
             Non
       </v-btn>
@@ -30,11 +34,12 @@
     </v-row>
     <br>
     <br>
-    <v-row
-      align="end" >
-  <VertigoBackButton routeBack="/PageDrapeauxRouges"></VertigoBackButton>
-  <VertigoPasserButton passerQuestion="/PageHints"></VertigoPasserButton>
-        </v-row>
+    <br>
+    <br>
+    <v-row align="end" class="custom-row" dense>
+      <VertigoBackButton routeBack="/PageDrapeauxRouges" class="custom-button"></VertigoBackButton>
+      <VertigoPasserButton passerQuestion="/PageHints" class="custom-button"></VertigoPasserButton>
+    </v-row>
   </template>
     
     
@@ -86,6 +91,16 @@
 }
 .v-btn-toggle .v-btn {
   margin-bottom: 12px; /* Ajustez la valeur selon vos besoins */
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+}
+
+.custom-button {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 
