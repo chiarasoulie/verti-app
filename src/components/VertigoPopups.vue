@@ -15,7 +15,8 @@
     <template v-slot:default="{ isActive }">
       <v-card title="Informations complémentaires">
         <v-card-text>
-          {{props.texte}}
+          {{props.texte}}<br>
+          {{props.texte2}}
          </v-card-text>
   
   
@@ -39,8 +40,9 @@
   
   
   const props = defineProps({
-    texte: String // Définissez le type de la propriété text comme une chaîne de caractères
-  });
+  texte: String, // Définissez le type de la propriété text comme une chaîne de caractères
+  texte2: String // Définissez le type de la propriété text comme une chaîne de caractères
+});
   </script>
   
   

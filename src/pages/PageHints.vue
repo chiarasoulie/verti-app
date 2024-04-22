@@ -10,7 +10,11 @@
   <br>
 
     <div class=posi>
-      <p><VertigoPopups texte="info sur les HI"></VertigoPopups></p>
+      <p><VertigoPopups texte=" +  : Pas de saccade
+correctrice, œil reste fixé sur la cible"
+                        texte2=" -  : Saccade de rattrapage présente">
+                      </VertigoPopups>
+                    </p>
     </div>
 
     <v-btn-toggle v-model="hints.Hi" color="#20285F">
@@ -36,7 +40,13 @@
         </v-btn>
     </v-btn-toggle>
 
-    <div class = posi><p><VertigoPopups texte="info sur les N"></VertigoPopups></p></div>
+    <div class = posi>
+      <p>
+        <VertigoPopups texte=" +  : Non épuisable, multidirectionnel, vertical ou dissocié (2 yeux différents)"
+        texte2= "- Rapidement épuisable, unidirectionnel, horizontorotatoire">
+        </VertigoPopups>
+      </p>
+    </div>
     <v-btn-toggle v-model="hints.N" color="#20285F">
       <v-btn
             size="x-large"
@@ -60,7 +70,8 @@
             +++
         </v-btn>
     </v-btn-toggle>
-    <div class = posi><p><VertigoPopups texte="info sur les TS"></VertigoPopups></p></div>
+    <div class = posi><p><VertigoPopups texte=" +  : Déviation verticale d’un œil "
+texte2="-  : Pas de déviation verticale "></VertigoPopups></p></div>
     <v-btn-toggle v-model="hints.TS" color="#20285F">
       <v-btn
             size="x-large"
