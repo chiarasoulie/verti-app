@@ -25,10 +25,7 @@
         <!-- le menu s'affichera qd l'élément d'id 'menu-droite' ici 'v-btn' sera activé-->
         <v-menu activator="#menu-droite">  
             <v-list>
-              <v-list-item to="/"> <!-- navigation vers la page "/" -->
-                <v-list-item-title>Reprendre</v-list-item-title>
-              </v-list-item>
-              <v-list-item to="/"> <!-- navigation vers la page "/" -->
+              <v-list-item to="/PageLancement"> <!-- navigation vers la page "/" -->
                 <v-list-item-title>Recommencer</v-list-item-title>
               </v-list-item>
               <v-list-item to="/"> <!-- navigation vers la page "/" -->
