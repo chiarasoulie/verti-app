@@ -90,8 +90,8 @@
   doc.text(`Bilan de l'examen clinique : `, 10, infoY + 50);
   affichageHistorique();
 
-  doc.text(`Diagnostic:`, 10, 170)
-  doc.text(`diagnostique proposé: ${diag.value}`, 10, 180);
+  
+  doc.text(`Diagnostique proposé: ${diag.value}`, 10, posY + 20);
 
 
 
